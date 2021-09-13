@@ -28,7 +28,7 @@ puts m.name
 puts m.annual_revenue
 end
 
-@womens_stores = Store.where(womens_apparel:true, annual_revenue:<1000000)
+@womens_stores = Store.where("womens_apparel = ? AND annual_revenue < ?", true, 1000000)
 @womens_stores.each do |m|
   puts " "
 
